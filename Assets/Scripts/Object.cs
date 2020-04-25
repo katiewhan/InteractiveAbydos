@@ -5,46 +5,36 @@ using UnityEngine.UI;
 
 public class Object : MonoBehaviour
 {
-    public Transform point1;
-    public Transform point2;
-    public float threshold;
-    private float posAve;
-    Image image;
-
-
+    public RectTransform point1;
+    public RectTransform point2;
     public GameObject textToShow;
 
+    private float threshold;
+    private Image image;
+
+    void Start()
+    {
+        RectTransform timePeriod = this.transform.parent.gameObject.GetComponent<RectTransform>();
+        threshold = timePeriod.anchoredPosition.y;
+        image = GetComponent<Image>();
+    }
     void Update()
     {
-        image = GetComponent<Image>();
-          //image.color = new Color(image.color.r, image.color.g, image.color.b, 10f);
-          //Debug.Log("point0.position.z " + point0.position.z);
-         posAve= (point1.position.y+point2.position.y)/2;
-          //Debug.Log("posAve"+posAve);
-        if(posAve<threshold){
-            Debug.Log("hiding");
-            Color c = image.color;
+        float posAvg = (point1.anchoredPosition.y + point2.anchoredPosition.y) / 2;
+        Color c = image.color;
+        if (posAvg < threshold - 100){
+            c.a = 0.5f;
+        }
+        else if (posAvg <threshold){
+            c.a = 1;
+        }
+        else
+        {
             c.a = 0;
-            image.color = c;
-             }
-             else if(((posAve-1.19)>threshold)){
-                 Color c = image.color;
-                 c.a = 0.5f;
-                image.color = c;
-                Debug.Log("dead");
-
-             }
-             else
-             {
-                 Color c = image.color;
-                 c.a = 1;
-                image.color = c;
-                Debug.Log("Showing");
-                 
-             }   
-
+        }
+        image.color = c;
     }
-    
+
     void OnMouseOver()
     {
         textToShow.SetActive(true);

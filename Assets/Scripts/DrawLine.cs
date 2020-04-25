@@ -30,11 +30,11 @@ public class DrawLine : MonoBehaviour
     void Update()
     {
         
-            LineRenderer.SetPosition(0, point0.position);
+            LineRenderer.SetPosition(0, new Vector3(point0.position.x, point0.position.y, -5.5f));
             //Debug.Log("point0.position " + point0.position);
-            LineRenderer.SetPosition(1, point1.position);
-            LineRenderer.SetPosition(2, point2.position);
-            LineRenderer.SetPosition(3, point3.position);
-            LineRenderer.SetPosition(4, point4.position);
+            LineRenderer.SetPosition(1, new Vector3(point1.position.x, point1.position.y, -5.5f));
+            LineRenderer.SetPosition(2, new Vector3(point2.position.x, point2.position.y, -5.5f));
+            LineRenderer.SetPosition(3, new Vector3(point3.position.x, point3.position.y, -5.5f));
+            LineRenderer.SetPosition(4, new Vector3(point4.position.x, point4.position.y, -5.5f));
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +15,8 @@ public class Polygon : MonoBehaviour
     //public float scaleX = 1;
     private float endY = 7;
 
+    public bool flip = false;
+
 
     Mesh mesh;
     GameObject gameObject;
@@ -24,8 +27,7 @@ public class Polygon : MonoBehaviour
     {
         mesh = new Mesh();
         gameObject=new GameObject("Mesh", typeof(MeshFilter), typeof(MeshRenderer));
-        
-        
+        if (flip) endY *= -1;
     }
 
     // Update is called once per frame
@@ -35,29 +37,30 @@ public class Polygon : MonoBehaviour
         Vector2[] uv = new Vector2[10];
         int[] triangles = new int[24];
 
-        vertices[0] = new Vector2(point0.position.x, endY);
-        vertices[1] = new Vector2(point1.position.x, endY);
-        vertices[2] = new Vector2(point2.position.x, endY);
-        vertices[3] = new Vector2(point3.position.x, endY);
-        vertices[4] = new Vector2(point4.position.x, endY);
+        vertices[0] = new Vector3(point0.position.x, endY, -5.5f);
+        vertices[1] = new Vector3(point1.position.x, endY, -5.5f);
+        vertices[2] = new Vector3(point2.position.x, endY, -5.5f);
+        vertices[3] = new Vector3(point3.position.x, endY, -5.5f);
+        vertices[4] = new Vector3(point4.position.x, endY, -5.5f);
         var scale = point0.position.x - point1.position.x;
 
-        vertices[5] = point4.position;
-        vertices[6] = point3.position;
-        vertices[7] = point2.position;
-        vertices[8] = point1.position;
-        vertices[9] = point0.position;
+        Vector3 offset = flip ? new Vector3(0, 0, 0) : new Vector3(0, 1, 0);
+        vertices[5] = point4.position + offset;
+        vertices[6] = point3.position + offset;
+        vertices[7] = point2.position + offset;
+        vertices[8] = point1.position + offset;
+        vertices[9] = point0.position + offset;
 
         uv[0] = new Vector2(point0.position.x, endY);
         uv[1] = new Vector2(point1.position.x, endY);
         uv[2] = new Vector2(point2.position.x, endY);
         uv[3] = new Vector2(point3.position.x, endY);
         uv[4] = new Vector2(point4.position.x, endY);
-        uv[5] = point4.position;
-        uv[6] = point3.position;
-        uv[7] = point2.position;
-        uv[8] = point1.position;
-        uv[9] = point0.position;
+        uv[5] = point4.position + offset;
+        uv[6] = point3.position + offset;
+        uv[7] = point2.position + offset;
+        uv[8] = point1.position + offset;
+        uv[9] = point0.position + offset;
 
 
         triangles[0] = 9;
@@ -96,6 +99,10 @@ public class Polygon : MonoBehaviour
         mesh.vertices = vertices;
         mesh.uv = uv;
         mesh.triangles = triangles;
+        if (flip)
+        {
+            mesh.triangles = mesh.triangles.Reverse().ToArray();
+        }
 
         //GameObject gameObject = new GameObject("Mesh", typeof(MeshFilter), typeof(MeshRenderer));
         gameObject.transform.localScale = new Vector3(1, 1, 1);
