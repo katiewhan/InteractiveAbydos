@@ -6,6 +6,9 @@ TagManager:
   tags:
   - object
   - navButton
+  - roomBound
+  - enterRFID
+  - enterSlider
   layers:
   - Default
   - TransparentFX

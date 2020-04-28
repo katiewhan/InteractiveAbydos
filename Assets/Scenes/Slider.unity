@@ -1884,7 +1884,7 @@ MonoBehaviour:
   point2: {fileID: 41093555}
   point3: {fileID: 1449392225}
   point4: {fileID: 135637443}
-  flip: 1
+  canvas: {fileID: 1522720045}
 --- !u!4 &1612287541
 Transform:
   m_ObjectHideFlags: 0
@@ -2501,7 +2501,7 @@ MonoBehaviour:
   point2: {fileID: 41093555}
   point3: {fileID: 1449392225}
   point4: {fileID: 135637443}
-  flip: 0
+  canvas: {fileID: 0}
 --- !u!1 &1997570647
 GameObject:
   m_ObjectHideFlags: 0

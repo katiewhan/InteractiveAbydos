@@ -10,6 +10,7 @@ public class NavigateCamera : MonoBehaviour
     public float dragSpeed = 2f;
     public float keySpeed = 0.05f;
     public GameObject RFIDCamera;
+    public GameObject SliderCamera;
     public GameObject Canvas;
 
     private bool isDrag;
@@ -20,6 +21,7 @@ public class NavigateCamera : MonoBehaviour
 
     private RawImage mainFade;
     private Color startColor;
+    private int activeSection = 0; // 1: RFID, 2: Slider
 
     private float yaw;
     private float pitch;
@@ -71,19 +73,13 @@ public class NavigateCamera : MonoBehaviour
         }
 
         // Key navigation
-
         if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.UpArrow))
         {
             int direction = Input.GetKey(KeyCode.DownArrow) ? -1 : 1;
             this.transform.position = this.transform.position + this.transform.forward * direction * keySpeed;
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            fadeCount = 0f;
-            startColor = mainFade.color;
-        }
-
+        // Transition to other section
         if (fadeCount > -1f && fadeCount < 2.5f)
         {
             Color targetColor = new Color(startColor.r, startColor.g, startColor.b, 1.0f);
@@ -94,14 +90,63 @@ public class NavigateCamera : MonoBehaviour
             }
             if (fadeCount > 1f)
             {
-                RFIDCamera.GetComponent<Camera>().enabled = true;
                 this.GetComponent<Camera>().enabled = false;
-                Canvas.transform.GetChild(1).gameObject.SetActive(true);
+
+                if (activeSection == 1)
+                {
+                    RFIDCamera.GetComponent<Camera>().enabled = true;
+                }
+                else if (activeSection == 2)
+                {
+                    SliderCamera.GetComponent<Camera>().enabled = true;
+                }
+
+                Canvas.transform.GetChild(activeSection).gameObject.SetActive(true);
 
                 mainFade.color = Color.Lerp(targetColor, startColor, fadeCount - 1f);
             }
             fadeCount += Time.deltaTime;
         }
-        
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Collided" + collision.collider.name);
+        if (collision.collider.gameObject.tag == "roomBound")
+        {
+            startPosition = this.transform.position;
+            targetPosition = this.transform.position - this.transform.forward * 0.1f;
+            timeCount = 0f;
+        }
+        if (collision.collider.gameObject.tag == "enterRFID")
+        {
+            activeSection = 1;
+            fadeCount = 0f;
+            startColor = mainFade.color;
+        }
+        if (collision.collider.gameObject.tag == "enterSlider")
+        {
+            activeSection = 2;
+            fadeCount = 0f;
+            startColor = mainFade.color;
+        }
+    }
+
+    public void ReturnHome()
+    {
+        this.GetComponent<Camera>().enabled = true;
+
+        if (activeSection == 1)
+        {
+            RFIDCamera.GetComponent<Camera>().enabled = false;
+        }
+        else if (activeSection == 2)
+        {
+            SliderCamera.GetComponent<Camera>().enabled = false;
+        }
+
+        Canvas.transform.GetChild(activeSection).gameObject.SetActive(false);
+
+        activeSection = 0;
     }
 }

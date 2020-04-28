@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class DragSlider : MonoBehaviour, IEndDragHandler, IDragHandler {
     public float PosX;
+    public RectTransform canvas;
 
     private RectTransform rectTransform;
     private float PosY;
@@ -12,7 +13,6 @@ public class DragSlider : MonoBehaviour, IEndDragHandler, IDragHandler {
 
     private void Awake () {
         rectTransform = GetComponent<RectTransform>();
-        RectTransform canvas = this.transform.parent.gameObject.GetComponent<RectTransform>();
         periodIncrement = canvas.rect.height / 6;
     }
 
@@ -27,13 +27,13 @@ public class DragSlider : MonoBehaviour, IEndDragHandler, IDragHandler {
         else if (PosY < -max)
         {
             PosY = -max;
-                
         }
          
         rectTransform.anchoredPosition = new Vector2(PosX, PosY);
     }
 
     public void OnEndDrag (PointerEventData eventData) {
+        Debug.Log("drag");
         PosY = Mathf.Round(PosY / periodIncrement) * periodIncrement;
         rectTransform.anchoredPosition = new Vector2(PosX, PosY);
     }
