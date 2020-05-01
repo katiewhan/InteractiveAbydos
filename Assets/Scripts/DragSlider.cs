@@ -4,16 +4,22 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class DragSlider : MonoBehaviour, IEndDragHandler, IDragHandler {
-    public float PosX;
-    public RectTransform canvas;
+    public float X;
+    public float Y;
 
     private RectTransform rectTransform;
     private float PosY;
+    private float PosX;
     private float periodIncrement;
 
-    private void Awake () {
+    private void Start() {
         rectTransform = GetComponent<RectTransform>();
+        RectTransform canvas = this.transform.parent.GetComponent<RectTransform>();
         periodIncrement = canvas.rect.height / 6;
+        float widthIncrement = canvas.rect.width / 4;
+        PosX = X * widthIncrement;
+        PosY = Y * periodIncrement;
+        rectTransform.anchoredPosition = new Vector2(PosX, PosY);
     }
 
     public void OnDrag(PointerEventData eventData) {
@@ -33,7 +39,6 @@ public class DragSlider : MonoBehaviour, IEndDragHandler, IDragHandler {
     }
 
     public void OnEndDrag (PointerEventData eventData) {
-        Debug.Log("drag");
         PosY = Mathf.Round(PosY / periodIncrement) * periodIncrement;
         rectTransform.anchoredPosition = new Vector2(PosX, PosY);
     }

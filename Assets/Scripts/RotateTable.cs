@@ -14,7 +14,7 @@ public class RotateTable : MonoBehaviour
 
     private SelectObject currentActive;
 
-    public Canvas canvas;
+    public GameObject canvas;
     public float dragSensitivity = 0.08f;
 
     void OnMouseDown()

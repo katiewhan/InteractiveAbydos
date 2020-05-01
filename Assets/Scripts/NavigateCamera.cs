@@ -47,37 +47,41 @@ public class NavigateCamera : MonoBehaviour
             timeCount += Time.deltaTime;
         }
 
-        // Mouse navigation
-        if ((Input.GetMouseButtonUp(0) && !isDrag))
+        if (activeSection == 0)
         {
-            startPosition = this.transform.position;
-            targetPosition = this.transform.position + this.transform.forward * stride;
-            timeCount = 0f;
-        }
-        if (Input.GetMouseButton(0))
-        {
-            float inputX = Input.GetAxis("Mouse X");
-            float inputY = Input.GetAxis("Mouse Y");
-            yaw -= dragSpeed * inputX;
-            pitch += dragSpeed * inputY;
-            this.transform.eulerAngles = new Vector3(pitch, yaw, 0f);
-
-            if (Mathf.Abs(inputX) > 0.01f || Mathf.Abs(inputY) > 0.01f)
+            // Mouse navigation
+            if (Input.GetMouseButtonUp(0) && !isDrag)
             {
-                isDrag = true;
+                startPosition = this.transform.position;
+                targetPosition = this.transform.position + this.transform.forward * stride;
+                timeCount = 0f;
+            }
+            if (Input.GetMouseButton(0))
+            {
+                float inputX = Input.GetAxis("Mouse X");
+                float inputY = Input.GetAxis("Mouse Y");
+                yaw -= dragSpeed * inputX;
+                pitch += dragSpeed * inputY;
+                this.transform.eulerAngles = new Vector3(pitch, yaw, 0f);
+
+                if (Mathf.Abs(inputX) > 0.01f || Mathf.Abs(inputY) > 0.01f)
+                {
+                    isDrag = true;
+                }
+            }
+            else
+            {
+                isDrag = false;
+            }
+
+            // Key navigation
+            if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.W))
+            {
+                int direction = Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S) ? -1 : 1;
+                this.transform.position = this.transform.position + this.transform.forward * direction * keySpeed;
             }
         }
-        else
-        {
-            isDrag = false;
-        }
-
-        // Key navigation
-        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.UpArrow))
-        {
-            int direction = Input.GetKey(KeyCode.DownArrow) ? -1 : 1;
-            this.transform.position = this.transform.position + this.transform.forward * direction * keySpeed;
-        }
+        
 
         // Transition to other section
         if (fadeCount > -1f && fadeCount < 2.5f)
@@ -102,6 +106,7 @@ public class NavigateCamera : MonoBehaviour
                 }
 
                 Canvas.transform.GetChild(activeSection).gameObject.SetActive(true);
+                Canvas.transform.GetChild(3).gameObject.SetActive(true); // button
 
                 mainFade.color = Color.Lerp(targetColor, startColor, fadeCount - 1f);
             }
@@ -111,7 +116,6 @@ public class NavigateCamera : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collided" + collision.collider.name);
         if (collision.collider.gameObject.tag == "roomBound")
         {
             startPosition = this.transform.position;
@@ -134,6 +138,7 @@ public class NavigateCamera : MonoBehaviour
 
     public void ReturnHome()
     {
+        this.transform.position -= this.transform.forward * stride;
         this.GetComponent<Camera>().enabled = true;
 
         if (activeSection == 1)
@@ -146,7 +151,13 @@ public class NavigateCamera : MonoBehaviour
         }
 
         Canvas.transform.GetChild(activeSection).gameObject.SetActive(false);
+        Canvas.transform.GetChild(3).gameObject.SetActive(false); // button
 
+        Invoke("ReturnNavControls", 0.5f);
+    }
+
+    private void ReturnNavControls()
+    {
         activeSection = 0;
     }
 }

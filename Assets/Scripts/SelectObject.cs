@@ -47,6 +47,11 @@ public class SelectObject : MonoBehaviour
             startPosition = this.transform.position;
             startRotation = this.transform.rotation;
             timeCount = 0f;
+            foreach (Transform childCard in this.transform)
+            {
+                childCard.gameObject.SetActive(true);
+            }
+
             table.ActivateObject(objectIndex, objectDescription);
         }
     }
@@ -86,5 +91,9 @@ public class SelectObject : MonoBehaviour
         manualDrag = false;
         this.transform.position = startPosition;
         this.transform.rotation = startRotation;
+        foreach (Transform childCard in this.transform)
+        {
+            childCard.gameObject.SetActive(false);
+        }
     }
 }

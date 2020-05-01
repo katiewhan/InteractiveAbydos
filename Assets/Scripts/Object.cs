@@ -7,45 +7,54 @@ public class Object : MonoBehaviour
 {
     public RectTransform point1;
     public RectTransform point2;
+    public RectTransform backgroundCanvas;
+    public float xPos;
+
     public GameObject textToShow;
 
     private float threshold;
-    private Image image;
+    private float increment;
+    private Image deacImage;
+    private Image highlightImage;
 
     void Start()
     {
+        float x = Mathf.Lerp(point1.anchoredPosition.x, point2.anchoredPosition.x, xPos);
+        GetComponent<RectTransform>().anchoredPosition = new Vector2(x, 0);
+
         RectTransform timePeriod = this.transform.parent.gameObject.GetComponent<RectTransform>();
         threshold = timePeriod.anchoredPosition.y;
-        image = GetComponent<Image>();
+        increment = backgroundCanvas.rect.height / 6;
+        deacImage = this.transform.GetChild(0).GetComponent<Image>();
+        highlightImage = this.transform.GetChild(1).GetComponent<Image>();
     }
     void Update()
     {
-        float posAvg = (point1.anchoredPosition.y + point2.anchoredPosition.y) / 2;
-        Color c = image.color;
-        if (posAvg < threshold - 100){
-            c.a = 0.5f;
+        float y = Mathf.Lerp(point1.anchoredPosition.y, point2.anchoredPosition.y, xPos);
+        if (y < threshold - increment)
+        {
+            deacImage.enabled = true;
+            highlightImage.enabled = false;
         }
-        else if (posAvg <threshold){
-            c.a = 1;
+        else if (y < threshold)
+        {
+            deacImage.enabled = false;
+            highlightImage.enabled = true;
         }
         else
         {
-            c.a = 0;
+            deacImage.enabled = false;
+            highlightImage.enabled = false;
         }
-        image.color = c;
     }
 
     void OnMouseOver()
     {
         textToShow.SetActive(true);
-        //If your mouse hovers over the GameObject with the script attached, output this message
-        Debug.Log("Mouse is over GameObject.");
     }
 
     void OnMouseExit()
     {
         textToShow.SetActive(false);
-        //The mouse is no longer hovering over the GameObject so output this message each frame
-        Debug.Log("Mouse is no longer on GameObject.");
     }
 }
