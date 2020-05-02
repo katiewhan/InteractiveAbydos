@@ -15,6 +15,7 @@ public class RotateTable : MonoBehaviour
     private SelectObject currentActive;
 
     public GameObject canvas;
+    public Image mainObjectDescription;
     public float dragSensitivity = 0.08f;
 
     void OnMouseDown()
@@ -71,7 +72,7 @@ public class RotateTable : MonoBehaviour
         timeCount = 0f;
     }
 
-    public void ActivateObject(int obj, string description)
+    public void ActivateObject(int obj, Sprite description)
     {
         //TurnTo(obj);
         foreach (Transform child in this.transform)
@@ -87,19 +88,13 @@ public class RotateTable : MonoBehaviour
             }
         }
 
+        mainObjectDescription.sprite = description;
+
         foreach (Transform canvasChild in canvas.transform)
         {
             if (canvasChild.gameObject.name == "Panel")
             {
                 canvasChild.gameObject.SetActive(true);
-
-                foreach (Transform panelChild in canvasChild)
-                {
-                    if (panelChild.gameObject.name == "ObjectDescription")
-                    {
-                        panelChild.gameObject.GetComponent<TextMeshProUGUI>().SetText(description);
-                    }
-                }
             }
 
             if (canvasChild.gameObject.tag == "navButton")

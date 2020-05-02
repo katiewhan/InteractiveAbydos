@@ -8,6 +8,7 @@ public class SelectObject : MonoBehaviour
     private Shader objectShader;
     private MeshRenderer rend;
     private RotateTable table;
+    private BoxCollider collider;
 
     private float timeCount = 0f;
     private Vector3 startPosition;
@@ -15,7 +16,7 @@ public class SelectObject : MonoBehaviour
     private bool manualDrag = false;
 
     public int objectIndex;
-    public string objectDescription;
+    public Sprite objectDescription;
     public float rotateSpeed = 1f;
     public float dragSpeed = 5f;
 
@@ -51,6 +52,7 @@ public class SelectObject : MonoBehaviour
             {
                 childCard.gameObject.SetActive(true);
             }
+            collider.enabled = false;
 
             table.ActivateObject(objectIndex, objectDescription);
         }
@@ -63,6 +65,7 @@ public class SelectObject : MonoBehaviour
         objectShader = Shader.Find("Custom/NoCullShader");
 
         table = this.transform.parent.GetComponent<RotateTable>();
+        collider = GetComponent<BoxCollider>();
     }
 
     // Update is called once per frame
@@ -95,5 +98,6 @@ public class SelectObject : MonoBehaviour
         {
             childCard.gameObject.SetActive(false);
         }
+        collider.enabled = true;
     }
 }

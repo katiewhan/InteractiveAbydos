@@ -10,12 +10,11 @@ public class Object : MonoBehaviour
     public RectTransform backgroundCanvas;
     public float xPos;
 
-    public GameObject textToShow;
-
     private float threshold;
     private float increment;
     private Image deacImage;
     private Image highlightImage;
+    private Image textToShow;
 
     void Start()
     {
@@ -27,7 +26,10 @@ public class Object : MonoBehaviour
         increment = backgroundCanvas.rect.height / 6;
         deacImage = this.transform.GetChild(0).GetComponent<Image>();
         highlightImage = this.transform.GetChild(1).GetComponent<Image>();
+        textToShow = this.transform.GetChild(2).GetComponent<Image>();
+        textToShow.enabled = false;
     }
+
     void Update()
     {
         float y = Mathf.Lerp(point1.anchoredPosition.y, point2.anchoredPosition.y, xPos);
@@ -50,11 +52,11 @@ public class Object : MonoBehaviour
 
     void OnMouseOver()
     {
-        textToShow.SetActive(true);
+        if (highlightImage.enabled) textToShow.enabled = true;
     }
 
     void OnMouseExit()
     {
-        textToShow.SetActive(false);
+        textToShow.enabled = false;
     }
 }
