@@ -8144,6 +8144,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 591784016422905751, guid: 67f6be4932f5e704daee6ce316ba92ba,
+        type: 3}
+      propertyPath: m_TagString
+      value: object
+      objectReference: {fileID: 0}
+    - target: {fileID: 996496539693876081, guid: 67f6be4932f5e704daee6ce316ba92ba,
+        type: 3}
+      propertyPath: m_TagString
+      value: object
+      objectReference: {fileID: 0}
+    - target: {fileID: 1138160003680599249, guid: 67f6be4932f5e704daee6ce316ba92ba,
+        type: 3}
+      propertyPath: m_TagString
+      value: object
+      objectReference: {fileID: 0}
+    - target: {fileID: 2649158596512058541, guid: 67f6be4932f5e704daee6ce316ba92ba,
+        type: 3}
+      propertyPath: m_TagString
+      value: object
+      objectReference: {fileID: 0}
+    - target: {fileID: 4956944621124409237, guid: 67f6be4932f5e704daee6ce316ba92ba,
+        type: 3}
+      propertyPath: m_TagString
+      value: object
+      objectReference: {fileID: 0}
     - target: {fileID: 5119960564204620712, guid: 67f6be4932f5e704daee6ce316ba92ba,
         type: 3}
       propertyPath: canvas
