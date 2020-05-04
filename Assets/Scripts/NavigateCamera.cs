@@ -64,7 +64,7 @@ public class NavigateCamera : MonoBehaviour
                 pitch += dragSpeed * inputY;
                 this.transform.eulerAngles = new Vector3(pitch, yaw, 0f);
 
-                if (Mathf.Abs(inputX) > 0.01f || Mathf.Abs(inputY) > 0.01f)
+                if (Mathf.Abs(inputX) > 0.03f || Mathf.Abs(inputY) > 0.03f)
                 {
                     isDrag = true;
                 }
