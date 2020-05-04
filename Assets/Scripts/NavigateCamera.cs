@@ -53,7 +53,9 @@ public class NavigateCamera : MonoBehaviour
             if (Input.GetMouseButtonUp(0) && !isDrag)
             {
                 startPosition = this.transform.position;
-                targetPosition = this.transform.position + this.transform.forward * stride;
+                Vector3 fwd = this.transform.forward;
+                fwd.y = 0f;
+                targetPosition = this.transform.position + fwd * stride;
                 timeCount = 0f;
             }
             if (Input.GetMouseButton(0))
@@ -78,7 +80,9 @@ public class NavigateCamera : MonoBehaviour
             if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.W))
             {
                 int direction = Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S) ? -1 : 1;
-                this.transform.position = this.transform.position + this.transform.forward * direction * keySpeed;
+                Vector3 fwd = this.transform.forward;
+                fwd.y = 0f;
+                this.transform.position += fwd * direction * keySpeed;
             }
         }
         
@@ -119,7 +123,9 @@ public class NavigateCamera : MonoBehaviour
         if (collision.collider.gameObject.tag == "roomBound")
         {
             startPosition = this.transform.position;
-            targetPosition = this.transform.position - this.transform.forward * 0.1f;
+            Vector3 fwd = this.transform.forward;
+            fwd.y = 0f;
+            targetPosition = this.transform.position - fwd * 0.1f;
             timeCount = 0f;
         }
         if (collision.collider.gameObject.tag == "enterRFID")
@@ -138,7 +144,9 @@ public class NavigateCamera : MonoBehaviour
 
     public void ReturnHome()
     {
-        this.transform.position -= this.transform.forward * stride;
+        Vector3 fwd = this.transform.forward;
+        fwd.y = 0f;
+        this.transform.position -= fwd * stride;
         this.GetComponent<Camera>().enabled = true;
 
         if (activeSection == 1)

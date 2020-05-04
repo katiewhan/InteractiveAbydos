@@ -24,7 +24,6 @@ public class DetailHotspot : MonoBehaviour
 
     void OnMouseDown()
     {
-        Debug.Log("click hotspot");
         detailImage.sprite = detail;
         detailOverlay.SetActive(true);
     }
