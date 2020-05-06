@@ -106,6 +106,8 @@ public class RotateTable : MonoBehaviour
 
     public void ExitObject()
     {
+        if (currentActive == null) return;
+
         currentActive.Deactivate();
         currentActive = null;
         foreach (Transform child in this.transform)

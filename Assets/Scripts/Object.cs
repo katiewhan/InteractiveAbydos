@@ -34,7 +34,7 @@ public class Object : MonoBehaviour
         highlightObject = this.transform.GetChild(1).GetComponent<RectTransform>();
 
         detailOverlay = textToShow.GetComponent<RectTransform>();
-        detailImage = textToShow.GetComponent<Image>();
+        detailImage = textToShow.transform.GetChild(0).GetComponent<Image>();
     }
 
     void Update()
@@ -63,16 +63,17 @@ public class Object : MonoBehaviour
         {
             Vector2 objectPos = GetComponent<RectTransform>().anchoredPosition;
             Vector2 periodPos = timePeriod.anchoredPosition;
-            detailOverlay.anchoredPosition = new Vector2(objectPos.x, periodPos.y);
+            float offset = timePeriod.name == "Early dynastic" ? detailOverlay.rect.height / 2 + 30 : -(detailOverlay.rect.height / 2 + 30);
+            detailOverlay.anchoredPosition = new Vector2(objectPos.x, periodPos.y + offset);
             detailImage.sprite = detail;
-            detailImage.enabled = true;
+            textToShow.SetActive(true);
             highlightObject.localScale = new Vector3(2, 2, 2);
         }
     }
 
     void OnMouseExit()
     {
-        detailImage.enabled = false;
+        textToShow.SetActive(false);
         highlightObject.localScale = new Vector3(1, 1, 1);
     }
 }

@@ -25,6 +25,7 @@ public class NavigateCamera : MonoBehaviour
 
     private float yaw;
     private float pitch;
+    private int lastDirection = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +57,7 @@ public class NavigateCamera : MonoBehaviour
                 Vector3 fwd = this.transform.forward;
                 fwd.y = 0f;
                 targetPosition = this.transform.position + fwd * stride;
+                lastDirection = 1;
                 timeCount = 0f;
             }
             if (Input.GetMouseButton(0))
@@ -83,6 +85,7 @@ public class NavigateCamera : MonoBehaviour
                 Vector3 fwd = this.transform.forward;
                 fwd.y = 0f;
                 this.transform.position += fwd * direction * keySpeed;
+                lastDirection = direction;
             }
         }
         
@@ -125,7 +128,7 @@ public class NavigateCamera : MonoBehaviour
             startPosition = this.transform.position;
             Vector3 fwd = this.transform.forward;
             fwd.y = 0f;
-            targetPosition = this.transform.position - fwd * 0.1f;
+            targetPosition = this.transform.position - fwd * lastDirection * 0.1f;
             timeCount = 0f;
         }
         if (collision.collider.gameObject.tag == "enterRFID")

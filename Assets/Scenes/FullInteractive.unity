@@ -65,7 +65,7 @@ LightmapSettings:
     m_ExtractAmbientOcclusion: 0
     m_Padding: 2
     m_LightmapParameters: {fileID: 0}
-    m_LightmapsBakeMode: 1
+    m_LightmapsBakeMode: 0
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherFiltering: 1
@@ -353,7 +353,7 @@ MonoBehaviour:
   point2: {fileID: 931541216}
   backgroundCanvas: {fileID: 832233650}
   textToShow: {fileID: 1558986355}
-  detail: {fileID: 21300000, guid: ab4df5ef6b3cf394bb5852fc44f1a86f, type: 3}
+  detail: {fileID: 21300000, guid: 0b97c2dc0870e1045a47de0691e1be40, type: 3}
   xPos: 0.6
 --- !u!61 &27286769
 BoxCollider2D:
@@ -665,7 +665,7 @@ MonoBehaviour:
   point2: {fileID: 1186512153}
   backgroundCanvas: {fileID: 832233650}
   textToShow: {fileID: 1558986355}
-  detail: {fileID: 21300000, guid: ca94dc48250d1ac4d91d11fefb8d56ea, type: 3}
+  detail: {fileID: 21300000, guid: c150f3dc328d0fa488660d0dd4f6a0de, type: 3}
   xPos: 0.1
 --- !u!61 &95510519
 BoxCollider2D:
@@ -749,7 +749,7 @@ MonoBehaviour:
   point2: {fileID: 1067892596}
   backgroundCanvas: {fileID: 832233650}
   textToShow: {fileID: 1558986355}
-  detail: {fileID: 21300000, guid: 7b16970526d416841931e5dedca31c09, type: 3}
+  detail: {fileID: 21300000, guid: 14c78e4248ffda94a93f48eaf29931a5, type: 3}
   xPos: 0.4
 --- !u!61 &123470040
 BoxCollider2D:
@@ -979,7 +979,7 @@ MonoBehaviour:
   point2: {fileID: 2123816984}
   backgroundCanvas: {fileID: 832233650}
   textToShow: {fileID: 1558986355}
-  detail: {fileID: 21300000, guid: 18e3898e5422c5b4686751e75a58a9f7, type: 3}
+  detail: {fileID: 21300000, guid: 67da4ae51117d8f45ae0423adb0fb9b7, type: 3}
   xPos: 0.3
 --- !u!61 &137467316
 BoxCollider2D:
@@ -1371,7 +1371,7 @@ MonoBehaviour:
   point2: {fileID: 931541216}
   backgroundCanvas: {fileID: 832233650}
   textToShow: {fileID: 1558986355}
-  detail: {fileID: 21300000, guid: 453d36a413d705445b7536022d2eec51, type: 3}
+  detail: {fileID: 21300000, guid: a031ae34aa1dd6a4fb5ee5b061f101fc, type: 3}
   xPos: 0.9
 --- !u!61 &287975165
 BoxCollider2D:
@@ -1528,7 +1528,7 @@ MonoBehaviour:
   point2: {fileID: 2123816984}
   backgroundCanvas: {fileID: 832233650}
   textToShow: {fileID: 1558986355}
-  detail: {fileID: 21300000, guid: 7ac5abab4ad2a3949a5de5923805e626, type: 3}
+  detail: {fileID: 21300000, guid: 124788c1e48e60542951de282d4fd345, type: 3}
   xPos: 0.8
 --- !u!61 &357416090
 BoxCollider2D:
@@ -1846,7 +1846,7 @@ MonoBehaviour:
   point2: {fileID: 1067892596}
   backgroundCanvas: {fileID: 832233650}
   textToShow: {fileID: 1558986355}
-  detail: {fileID: 21300000, guid: ec8ab8e4f86661e4d8f3e1fb88b751ee, type: 3}
+  detail: {fileID: 21300000, guid: 0919a70d236e9974e97272c114ec06e5, type: 3}
   xPos: 0.8
 --- !u!61 &374995465
 BoxCollider2D:
@@ -1930,7 +1930,7 @@ MonoBehaviour:
   point2: {fileID: 2123816984}
   backgroundCanvas: {fileID: 832233650}
   textToShow: {fileID: 1558986355}
-  detail: {fileID: 21300000, guid: 09b38ef6fccb2ac4f8e3de71241dbb1a, type: 3}
+  detail: {fileID: 21300000, guid: 9df002cf49cf3b84891906a6b865bada, type: 3}
   xPos: 0.5
 --- !u!61 &397118127
 BoxCollider2D:
@@ -2737,7 +2737,7 @@ MonoBehaviour:
   point2: {fileID: 931541216}
   backgroundCanvas: {fileID: 832233650}
   textToShow: {fileID: 1558986355}
-  detail: {fileID: 21300000, guid: a1f105845b65fc748ad699f6633569de, type: 3}
+  detail: {fileID: 21300000, guid: 1b5bde8b0855afd4fb93531fb25a174c, type: 3}
   xPos: 0.7
 --- !u!61 &547298581
 BoxCollider2D:
@@ -3406,7 +3406,7 @@ MonoBehaviour:
   point2: {fileID: 1067892596}
   backgroundCanvas: {fileID: 832233650}
   textToShow: {fileID: 1558986355}
-  detail: {fileID: 21300000, guid: 2da8f806ebe7e304784921a10d8e3f6c, type: 3}
+  detail: {fileID: 21300000, guid: 413f93eab6bfe4e4f9570a8529de9b07, type: 3}
   xPos: 0.3
 --- !u!61 &740897359
 BoxCollider2D:
@@ -5058,7 +5058,7 @@ MonoBehaviour:
   point2: {fileID: 1186512153}
   backgroundCanvas: {fileID: 832233650}
   textToShow: {fileID: 1558986355}
-  detail: {fileID: 21300000, guid: bc8d1e87cd237a141a661161e51fdbeb, type: 3}
+  detail: {fileID: 21300000, guid: e35996d56bcd8db4bba8e398f56f9367, type: 3}
   xPos: 0.7
 --- !u!61 &1115555898
 BoxCollider2D:
@@ -5776,7 +5776,7 @@ MonoBehaviour:
   point2: {fileID: 1186512153}
   backgroundCanvas: {fileID: 832233650}
   textToShow: {fileID: 1558986355}
-  detail: {fileID: 21300000, guid: 2428682c31e8c924a984462e0eb0b5f4, type: 3}
+  detail: {fileID: 21300000, guid: 1a2a641df65691a4e842e09df7c66a32, type: 3}
   xPos: 0.4
 --- !u!61 &1200342934
 BoxCollider2D:
@@ -6006,7 +6006,7 @@ MonoBehaviour:
   point2: {fileID: 2123816984}
   backgroundCanvas: {fileID: 832233650}
   textToShow: {fileID: 1558986355}
-  detail: {fileID: 21300000, guid: 3f695c06d75c67e4ea3b4c99ec9081ce, type: 3}
+  detail: {fileID: 21300000, guid: 8a3370c1e88116240a2a50f6a6e48b56, type: 3}
   xPos: 0.6
 --- !u!61 &1277845876
 BoxCollider2D:
@@ -6236,7 +6236,7 @@ MonoBehaviour:
   point2: {fileID: 931541216}
   backgroundCanvas: {fileID: 832233650}
   textToShow: {fileID: 1558986355}
-  detail: {fileID: 21300000, guid: b13de3ad3d22bc94db868f71226f78f0, type: 3}
+  detail: {fileID: 21300000, guid: 17d25fe134d45c84fbd5d35f00a34b66, type: 3}
   xPos: 0.4
 --- !u!61 &1300715943
 BoxCollider2D:
@@ -6459,7 +6459,7 @@ MonoBehaviour:
   point2: {fileID: 1067892596}
   backgroundCanvas: {fileID: 832233650}
   textToShow: {fileID: 1558986355}
-  detail: {fileID: 21300000, guid: d9ad9061b84b9004291e37229f1e26aa, type: 3}
+  detail: {fileID: 21300000, guid: 3b58c8a2558ab1a4bb5fdd913e1b0f42, type: 3}
   xPos: 0.6
 --- !u!61 &1368793069
 BoxCollider2D:
@@ -6775,6 +6775,79 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1452312641}
+  m_CullTransparentMesh: 0
+--- !u!1 &1478313412
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1478313413}
+  - component: {fileID: 1478313415}
+  - component: {fileID: 1478313414}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1478313413
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478313412}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1558986358}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1478313414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478313412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1478313415
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478313412}
   m_CullTransparentMesh: 0
 --- !u!1 &1481174355
 GameObject:
@@ -7165,7 +7238,7 @@ MonoBehaviour:
   point2: {fileID: 1067892596}
   backgroundCanvas: {fileID: 832233650}
   textToShow: {fileID: 1558986355}
-  detail: {fileID: 21300000, guid: 410d3f43a2dfb0e4fbce1a3bff1678df, type: 3}
+  detail: {fileID: 21300000, guid: 5fee2ffaf5a2fa14c9bb6ad7bf139528, type: 3}
   xPos: 0.2
 --- !u!61 &1532871291
 BoxCollider2D:
@@ -7293,7 +7366,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1558986356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7301,7 +7374,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1558986355}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -7312,7 +7385,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 9354682ff66446f4397fc759643a2399, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -7340,15 +7413,16 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1478313413}
   m_Father: {fileID: 682580708}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -99.999985, y: 100.000015}
-  m_SizeDelta: {x: 220, y: 200}
-  m_Pivot: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 23.000015, y: -76.71973}
+  m_SizeDelta: {x: 250, y: 204}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1593012646
 GameObject:
   m_ObjectHideFlags: 0
@@ -7447,13 +7521,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1593012646}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -11.7, y: 0.5, z: -41.4}
+  m_LocalRotation: {x: 0, y: 0.953717, z: 0, w: 0.30070582}
+  m_LocalPosition: {x: -11.9, y: 0.5, z: -41.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 145, z: 0}
 --- !u!54 &1593012651
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7480,8 +7554,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.2
-  m_Height: 0.5
+  m_Radius: 0.35
+  m_Height: 0.6
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1594912663
@@ -7953,7 +8027,7 @@ MonoBehaviour:
   point2: {fileID: 1186512153}
   backgroundCanvas: {fileID: 832233650}
   textToShow: {fileID: 1558986355}
-  detail: {fileID: 21300000, guid: 7d95cade1208cf740b6a7da1c9b3a3f6, type: 3}
+  detail: {fileID: 21300000, guid: 5b7bbd3aeb8ef4c42ba8c9c9ccd38793, type: 3}
   xPos: 0.3
 --- !u!61 &1662778745
 BoxCollider2D:
@@ -8755,7 +8829,7 @@ MonoBehaviour:
   point2: {fileID: 2123816984}
   backgroundCanvas: {fileID: 832233650}
   textToShow: {fileID: 1558986355}
-  detail: {fileID: 21300000, guid: a87658dc44c202b4ebbcf48dce9cdc78, type: 3}
+  detail: {fileID: 21300000, guid: e9fbb172c21ce01479c47c5795eec2d6, type: 3}
   xPos: 0.7
 --- !u!61 &1826122767
 BoxCollider2D:
@@ -9761,7 +9835,7 @@ MonoBehaviour:
   point2: {fileID: 1067892596}
   backgroundCanvas: {fileID: 832233650}
   textToShow: {fileID: 1558986355}
-  detail: {fileID: 21300000, guid: 8775dcaca704e564a93a3d7966849cd6, type: 3}
+  detail: {fileID: 21300000, guid: 5a78d21e547c89b4dbde03cd7d2b01ec, type: 3}
   xPos: 0.6
 --- !u!61 &2009706697
 BoxCollider2D:
@@ -9845,7 +9919,7 @@ MonoBehaviour:
   point2: {fileID: 1186512153}
   backgroundCanvas: {fileID: 832233650}
   textToShow: {fileID: 1558986355}
-  detail: {fileID: 21300000, guid: 24313d2557647eb4c914a68a0c55dcbe, type: 3}
+  detail: {fileID: 21300000, guid: b20504f94ac3abe48be568042b44ed0d, type: 3}
   xPos: 0.7
 --- !u!61 &2014261890
 BoxCollider2D:
@@ -10367,7 +10441,7 @@ MonoBehaviour:
   point2: {fileID: 931541216}
   backgroundCanvas: {fileID: 832233650}
   textToShow: {fileID: 1558986355}
-  detail: {fileID: 21300000, guid: d5384a9e67dade14ca3bc92cd0750bac, type: 3}
+  detail: {fileID: 21300000, guid: 44d1827c5f471e844a1ce15d85ccc992, type: 3}
   xPos: 0.5
 --- !u!61 &2073688837
 BoxCollider2D:
@@ -10539,7 +10613,7 @@ MonoBehaviour:
   point2: {fileID: 2123816984}
   backgroundCanvas: {fileID: 832233650}
   textToShow: {fileID: 1558986355}
-  detail: {fileID: 21300000, guid: fbe456fe5321b464593e8279ddcc97ed, type: 3}
+  detail: {fileID: 21300000, guid: e48ca1615dc04304cbdc5f241292b5f9, type: 3}
   xPos: 0.5
 --- !u!61 &2140047169
 BoxCollider2D:
@@ -10636,6 +10710,12 @@ PrefabInstance:
       propertyPath: detailOverlay
       value: 
       objectReference: {fileID: 1846533541}
+    - target: {fileID: 1750239593266852727, guid: 67f6be4932f5e704daee6ce316ba92ba,
+        type: 3}
+      propertyPath: detail
+      value: 
+      objectReference: {fileID: 21300000, guid: 6a6eaf6340ca1664e884f61a522ea5ee,
+        type: 3}
     - target: {fileID: 2649158596512058541, guid: 67f6be4932f5e704daee6ce316ba92ba,
         type: 3}
       propertyPath: m_TagString
@@ -10736,6 +10816,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5119960564204620715, guid: 67f6be4932f5e704daee6ce316ba92ba,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 5119960564204620718, guid: 67f6be4932f5e704daee6ce316ba92ba,
         type: 3}
